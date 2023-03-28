@@ -1,0 +1,58 @@
+[{
+    "name": "中国",
+    "code": "CN",
+    "timezone": "Asia/Shanghai"
+  },
+    {
+      "name": "美国",
+      "code": "US",
+      "timezone": "America/New_York"
+    },
+    {
+      "name": "英国",
+      "code": "GB",
+      "timezone": "Europe/London"
+    },
+    {
+      "name": "法国",
+      "code": "FR",
+      "timezone": "Europe/Paris"
+    },
+    {
+      "name": "德国",
+      "code": "DE",
+      "timezone": "Europe/Berlin"
+    },
+    {
+      "name": "日本",
+      "code": "JP",
+      "timezone": "Asia/Tokyo"
+    },
+    
+    {
+      "name": "加拿大",
+      "code": "CA",
+      "timezone": "America/Toronto"
+    },
+    {
+      "name": "澳大利亚",
+      "code": "AU",
+      "timezone": "Australia/Sydney"
+    },
+    {
+      "name": "新西兰",
+      "code": "NZ",
+      "timezone": "Pacific/Auckland"
+    },
+    {
+      "name": "韩国",
+      "code": "KR",
+      "timezone": "Asia/Seoul"
+    },
+    {
+      "name": "印度",
+      "code": "IN",
+      "timezone": "Asia/Kolkata"
+    }
+  ]
+  

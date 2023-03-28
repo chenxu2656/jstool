@@ -1,0 +1,138 @@
+<template>
+  <div id="container">
+    <div id="logo">
+      <!-- <img src="../../../public/images/icons/chuangye.png" alt="" srcset="" > -->
+    </div>
+    <el-menu :default-active="activePath" class="el-menu-vertical-demo" :collapse="isCollapse" @select="handleUpdate">
+      <el-menu-item index="home" @click="routerPush(router, '/admin')">
+        <el-icon></el-icon>
+        <span class="tit">Home Page</span>
+      </el-menu-item>
+     
+      <el-sub-menu index="account">
+        <template #title>
+          <el-icon></el-icon>
+          <span class="tit">时间工具</span>
+        </template>
+        <el-menu-item-group>
+          <el-menu-item index="timestamp" @click="routerPush(router, '/time/timestamp')">
+            <span class="tit">时间戳转换</span>
+          </el-menu-item>
+          <el-menu-item index="globaltime" @click="routerPush(router, '/time/globaltime')">
+            <span class="tit">世界时间</span>
+          </el-menu-item>
+          <el-menu-item index="globaltime" @click="routerPush(router, '/time/timeconvert')">
+            <span class="tit">时区转换</span>
+          </el-menu-item>
+          <!-- <el-menu-item index="stu" @click="routerPush(router, '/admin/account/judge')">
+            <span class="tit">评审老师账户</span></el-menu-item>
+          <el-menu-item index="judge" @click="routerPush(router, '/admin/account/stu')">
+            <span class="tit">学生账户</span></el-menu-item>
+            <el-menu-item index="judge" @click="routerPush(router, '/admin/account/institute')">
+            <span class="tit">机构管理</span></el-menu-item> -->
+          <!-- <el-menu-item
+        index="qiniuFile"
+        @click="routerPush(router, '/admin/qiniuFile')"
+        >七牛云</el-menu-item
+      > -->
+        </el-menu-item-group>
+      </el-sub-menu>
+
+
+      <!-- <el-menu-item index="sysSetting" @click="routerPush(router, '/admin/sys')">
+        <el-icon>
+          
+        </el-icon>
+        <span class="tit">系统设置</span>
+      </el-menu-item> -->
+    </el-menu>
+  </div>
+</template>
+
+<script setup>
+import { ref } from "vue";
+import { routerPush } from "../../js/index";
+import { useRouter, useRoute } from "vue-router";
+const router = useRouter();
+const route = useRoute()
+const isCollapse = ref(false);
+const activePath = ref("home");
+activePath.value = route.path.split('/admin/')[1] || 'home'
+const handleUpdate = (index) => {
+  activePath.value = index
+}
+</script>
+
+<style lang="scss">
+#container {
+  height: 100%;
+  background-color: #2f3d53;
+  #logo {
+    width: 100%;
+    height: 100px;
+    background-color: #2f3d53;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    img {
+      height: 80px;
+      object-fit: contain;
+    }
+    
+  }
+  .el-menu {
+    width: 100%;
+    border: none;
+    .tit {
+      color: #fff;
+      font-size: 16px;
+      font-family: system-ui, -apple-system;
+    }
+    .el-menu-item {
+      background-color: #3b4c63;
+      &:hover {
+        background-color: #45556b;
+      }
+    }
+    .el-menu-vertical-demo:not(.el-menu--collapse) {
+      width: 200px;
+      height: 100%;
+    }
+    .el-sub-menu {
+      height: auto;
+      background-color: #3b4c63;
+      .el-sub-menu__title {
+        &:hover {
+          background-color: #45556b;
+        }
+        .el-sub-menu__icon-arrow {
+          color: #fff;
+        }
+      }
+      .el-menu-item-group {
+        margin-top: 0px;
+        .el-menu-item-group__title {
+          display: none;
+
+          &:hover {
+            background-color: #45556b;
+          }
+        }
+        .el-menu-item {
+          padding-left: 60px;
+          background-color: #2e3e52;
+          &:hover {
+            background-color: #45556b;
+          }
+        }
+      }
+    }
+    .el-icon {
+      img {
+        width: 20px;
+        padding-right: 20px;
+      }
+    }
+  }
+}</style>
