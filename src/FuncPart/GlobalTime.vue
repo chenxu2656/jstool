@@ -15,10 +15,10 @@ import { ref, onMounted } from 'vue'
 import { ElButton } from 'element-plus'
 
 const timezones = ref([
-  { name: '中国', timezone: 'Asia/Shanghai', time: '' },
-  { name: '美国', timezone: 'America/New_York', time: '' },
-  { name: '英国', timezone: 'Europe/London', time: '' },
-  { name: '日本', timezone: 'Asia/Tokyo', time: '' }
+  { name: '中国', timezone: 'Asia/Shanghai', time: 'loading...' },
+  { name: '美国', timezone: 'America/New_York', time: 'loading...' },
+  { name: '英国', timezone: 'Europe/London', time: 'loading...' },
+  { name: '日本', timezone: 'Asia/Tokyo', time: 'loading...' }
 ])
 
 const updateTime = () => {
@@ -42,29 +42,40 @@ onMounted(() => {
 
 </script>
 
-<style>
+<style lang="scss">
 .container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-}
-
-.timezone {
+  justify-content: space-between;
+  .timezone {
   display: flex;
+  width: 23%;
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
-}
-
-.timezone-name {
+  background-color: #405368;
+  padding: 20px 10px;
+  color: white;
+  border-radius: 6px;
+  .timezone-name {
   font-size: 24px;
+  font-weight: 500;
 }
-
 .timezone-time {
-  font-size: 36px;
+  font-weight: 500;
+  font-size: 24px;
 }
 
 .copy-btn {
   margin-top: 10px;
 }
+}
+
+
+
+
+}
+
+
 </style>
